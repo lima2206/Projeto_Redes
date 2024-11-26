@@ -6,8 +6,15 @@ import { AppService } from './app.service';
 import { Item } from './entities/item.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { fileURLToPath } from 'url';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = join(__filename, '..');
+
 
 @Module({
+  
   imports: [
     // Import ConfigModule to load .env variables
     ConfigModule.forRoot({
@@ -29,6 +36,7 @@ import { join } from 'path';
     }),
 
     TypeOrmModule.forFeature([Item]),
+    
 
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'src/frontend'),
@@ -37,4 +45,7 @@ import { join } from 'path';
   controllers: [AppController],
   providers: [AppService],
 })
+
+
+
 export class AppModule {}
