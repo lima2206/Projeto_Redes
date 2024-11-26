@@ -18,6 +18,8 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "strict": true,
-    "esModuleInterop": true
+    "types": ["node"],
+    "moduleResolution": "node", 
+ 
   },
 }
