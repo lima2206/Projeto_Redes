@@ -4,14 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Item } from './entities/item.entity';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
-import { fileURLToPath } from 'url';
-
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = join(__filename, '..');
-
 
 @Module({
   
@@ -34,13 +26,7 @@ const __dirname = join(__filename, '..');
       }),
       inject: [ConfigService],
     }),
-
     TypeOrmModule.forFeature([Item]),
-    
-
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'src/frontend'),
-    }),
   ],
   controllers: [AppController],
   providers: [AppService],
