@@ -1,5 +1,5 @@
 # Step 1: Use an official Node.js image as a base
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Step 2: Set the working directory inside the container
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Step 7: Create a new image for the runtime environment
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Step 8: Set the working directory inside the container
 WORKDIR /app
@@ -32,7 +32,7 @@ COPY --from=builder /app/package*.json ./
 RUN npm install --production --legacy-peer-deps
 
 # Step 12: Expose the port that the NestJS app will run on (default is 3000)
-EXPOSE 3000
+EXPOSE 5000
 
 # Step 13: Run the application when the container starts
 CMD ["node", "dist/main"]
