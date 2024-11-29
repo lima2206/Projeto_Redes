@@ -121,7 +121,7 @@ async function deleteItem(listItem) {
   const itemId = listItem.dataset.id;
 
   try {
-    const response = await fetch(`${API_URL}/${itemId}`, { method: 'DELETE' });
+    const response = await fetch(`${API_URL}${itemId}`, { method: 'DELETE' });
     if (response.ok) {
       listItem.remove();
     } else {
