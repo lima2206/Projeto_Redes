@@ -71,12 +71,12 @@ function addItemToDOM(item) {
 
   // Update button
   const updateButton = document.createElement('button');
-  updateButton.textContent = 'Update';
+  updateButton.textContent = 'Atualizar';
   updateButton.addEventListener('click', () => updateItem(listItem, item));
 
   // Delete button
   const deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Delete';
+  deleteButton.textContent = 'Deletar';
   deleteButton.addEventListener('click', () => deleteItem(listItem));
 
   buttonGroup.appendChild(updateButton);
@@ -90,8 +90,8 @@ function addItemToDOM(item) {
 
 // Update an item
 async function updateItem(listItem, currentItem) {
-  const newTitle = prompt('Update title:', currentItem.name);
-  const newDescription = prompt('Update description:', currentItem.description);
+  const newTitle = prompt('Atualizar Nome:', currentItem.name);
+  const newDescription = prompt('Atualizar Descrição:', currentItem.description);
 
   if (!newTitle || !newDescription) return;
 
