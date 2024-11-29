@@ -15,14 +15,13 @@ import { Item } from './entities/item.entity';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
-        type: 'mysql',
+        type: 'postgres',
         host: configService.get<string>('DB_HOST'),
         port: parseInt(configService.get<string>('DB_PORT'), 10),
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: 'redes',
         entities: [Item],
-        driver: 'mysql2',
         synchronize: true,  // Set to false for production to avoid data loss
       }),
       inject: [ConfigService],
