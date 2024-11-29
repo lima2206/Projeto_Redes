@@ -1,7 +1,4 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-const API_URL = `${process.env.BACKEND_IP}/items`; // Update this if your route is different
+const API_URL = `http://lima2206.ddns.com/items`; // Atualize aqui se sua rota for diferente ou com o ip da máquina
 
 // DOM elements
 const itemForm = document.getElementById('itemForm');
