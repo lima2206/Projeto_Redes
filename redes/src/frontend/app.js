@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/items'; // Update this if your route is different
+require('dotenv').config();
+const API_URL = `${process.env.BACKEND_IP}/items`; // Update this if your route is different
 
 // DOM elements
 const itemForm = document.getElementById('itemForm');
