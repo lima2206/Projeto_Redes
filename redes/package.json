@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "nest build && npm run build:frontend",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "build:frontend": "mkdir -p dist/frontend && cp -r src/frontend/* dist/frontend/",
     "postbuild": "npm run build:frontend",
