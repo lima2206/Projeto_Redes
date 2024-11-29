@@ -99,7 +99,7 @@ async function updateItem(listItem, currentItem) {
   const itemId = listItem.dataset.id;
 
   try {
-    const response = await fetch(`${API_URL}/${itemId}`, {
+    const response = await fetch(`${API_URL}${itemId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedItem),
