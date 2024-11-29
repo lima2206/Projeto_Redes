@@ -1,4 +1,6 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
+
 const API_URL = `${process.env.BACKEND_IP}/items`; // Update this if your route is different
 
 // DOM elements
