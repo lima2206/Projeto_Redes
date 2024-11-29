@@ -1,4 +1,4 @@
-const API_URL = `http://lima2206.ddns.com/items`; // Atualize aqui se sua rota for diferente ou com o ip da máquina
+const API_URL = `http://lima2206.ddns.net/items`; // Atualize aqui se sua rota for diferente ou com o ip da máquina
 
 // DOM elements
 const itemForm = document.getElementById('itemForm');
